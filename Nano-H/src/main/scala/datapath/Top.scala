@@ -92,7 +92,7 @@ class Top extends Module {
     // Writing the output of the ALU to the Register File
     //reg_file.io.writeData := alu.io.output
 
-    dmem.io.memAddress := alu.io.output(11,2)
+    dmem.io.memAddress := alu.io.output(11,2).asUInt
     dmem.io.memData := reg_file.io.rs2
     dmem.io.memWrite := control.io.out_memWrite
     dmem.io.memRead := control.io.out_memRead
