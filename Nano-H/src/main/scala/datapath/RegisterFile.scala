@@ -19,7 +19,12 @@ class RegisterFile extends Module {
     io.rs1 := registers(io.rs1_sel) 
     io.rs2 := registers(io.rs2_sel) 
     when(io.regWrite === 1.U) {
-        registers(io.rd_sel) := io.writeData
+        when(io.rd_sel === "b00000".U) {
+            registers(io.rd_sel) := 0.S    
+        } .otherwise {
+            registers(io.rd_sel) := io.writeData
+        }
+        
     }
 
 }
