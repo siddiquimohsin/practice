@@ -56,7 +56,7 @@ class Top extends Module {
         when(control.io.out_extend_sel === "b00".U) {
             // I-Type
             alu.io.oper_b := imm_generation.io.i_imm    
-        } .elsewhen(control.io.out_extend_sel === "br01".U) {
+        } .elsewhen(control.io.out_extend_sel === "b01".U) {
             // S-Type
             alu.io.oper_b := imm_generation.io.s_imm
         } .elsewhen(control.io.out_extend_sel === "b10".U) {
